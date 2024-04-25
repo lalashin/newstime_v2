@@ -1,4 +1,4 @@
-//const API_KEY = 'c42962f8d2ff47bfaa629c992b467868';
+const API_KEY = 'c42962f8d2ff47bfaa629c992b467868';
 let newsList = [];
 const menus = document.querySelectorAll(".menus button");
 menus.forEach(menu => menu.addEventListener("click",(event) =>getNewsCategory(event)));
@@ -8,12 +8,14 @@ let searchResult = document.getElementById("search-result")
 let newsBoard = document.getElementById("news-board");
 let pagiNation = document.querySelector(".pagination")
 
-let url = new URL(`https://lalatimes.netlify.app/top-headlines`);
+
 let keyword = "";
 let totalResults = 0;
 let page = 1;
 const pageSize =10;
 const groupSize =5;
+
+let url = new URL(`https://lalatimes.netlify.app/top-headlines?country=kr&pageSize=${pageSize}`);
 
 const getNews = async () => {
     try{
@@ -46,13 +48,16 @@ const getNews = async () => {
         
     } catch(error) {
         console.log("error",error.message);
+        page = 0;
+        totalPage = 0;
         errorRender(error.message);
     }
    
 };
 
 const getLatesNews = async () =>{
-    url = new URL(`http://times-node-env.eba-appvq3ef.ap-northeast-2.elasticbeanstalk.com/top-headlines`);
+    page = 1;
+    url = new URL(`https://lalatimes.netlify.app/top-headlines?country=kr&pageSize=${pageSize}&apiKey=${API_KEY}`);
     //console.log(url)
     getNews();
 
@@ -61,16 +66,16 @@ const getLatesNews = async () =>{
 const getNewsCategory = async (event)=>{
     const category = event.target.textContent.toLowerCase();
     console.log("category",category);
-    url = new URL(`https://lalatimes.netlify.app/top-headlines?category=${category}`);
+    url = new URL(`https://lalatimes.netlify.app/top-headlines?country=kr&pageSize=${pageSize}&category=${category}&apiKey=${API_KEY}`);
     getNews();
 };
 
 const getNewsByKeyword = async () => {
     
     keyword = searchInput.value;
-    
+    page = 1;
    
-    url = new URL(`http://times-node-env.eba-appvq3ef.ap-northeast-2.elasticbeanstalk.com/top-headlines&q=${keyword}`);
+    url = new URL(`https://lalatimes.netlify.app/top-headlines?q=${keyword}&country=kr&pageSize=${pageSize}&apiKey=${API_KEY}`);
     getNews();
    
 };
