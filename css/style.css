@@ -38,6 +38,7 @@
 
 
 .btn-wrap {display: flex;}  
+.toggle-box {display: none;}
 .icon-button {
   width: 50px;
   height: 50px;
@@ -155,4 +156,10 @@
 
 .pagination li{
     cursor: pointer;
+}
+
+@media screen and (max-width: 63rem) {
+  .toggle-box {display: inline;}
+
+  .menus {display: none;}
 }
