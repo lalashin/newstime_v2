@@ -52,7 +52,7 @@ const getNews = async () => {
 };
 
 const getLatesNews = async () =>{
-    url = new URL(`https://lalatimes.netlify.app/top-headlines`);
+    url = new URL(`http://times-node-env.eba-appvq3ef.ap-northeast-2.elasticbeanstalk.com/top-headlines`);
     //console.log(url)
     getNews();
 
@@ -70,7 +70,7 @@ const getNewsByKeyword = async () => {
     keyword = searchInput.value;
     
    
-    url = new URL(`https://lalatimes.netlify.app/top-headlines&q=${keyword}`);
+    url = new URL(`http://times-node-env.eba-appvq3ef.ap-northeast-2.elasticbeanstalk.com/top-headlines&q=${keyword}`);
     getNews();
    
 };
