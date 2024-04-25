@@ -1,4 +1,4 @@
-const API_KEY = 'c42962f8d2ff47bfaa629c992b467868';
+//const API_KEY = 'c42962f8d2ff47bfaa629c992b467868';
 let newsList = [];
 const menus = document.querySelectorAll(".menus button");
 menus.forEach(menu => menu.addEventListener("click",(event) =>getNewsCategory(event)));
@@ -61,7 +61,7 @@ const getLatesNews = async () =>{
 const getNewsCategory = async (event)=>{
     const category = event.target.textContent.toLowerCase();
     console.log("category",category);
-    url = new URL(`https://lalatimes.netlify.app/top-headlines?category=${category}&apiKey=${API_KEY}`);
+    url = new URL(`https://lalatimes.netlify.app/top-headlines?category=${category}`);
     getNews();
 };
 
@@ -70,7 +70,7 @@ const getNewsByKeyword = async () => {
     keyword = searchInput.value;
     
    
-    url = new URL(`https://lalatimes.netlify.app/top-headlines&q=${keyword}&apiKey=${API_KEY}`);
+    url = new URL(`https://lalatimes.netlify.app/top-headlines&q=${keyword}`);
     getNews();
    
 };
