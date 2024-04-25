@@ -1,4 +1,4 @@
-newstime # NewsCatcher # NewsCatcherNewsAPI
+newstime #Newsapi
 
 News api 웹사이트: https://newsapi.org/docs
 
