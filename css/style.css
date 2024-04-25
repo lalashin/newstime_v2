@@ -1,3 +1,55 @@
+.toggle-menu {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: burlywood;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.toggle-menu  .close-btn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  border: none;
+  background: none;
+}
+.slide-menu-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.slide-menu-list button {
+  margin: 5px;
+  border: none;
+  background: none;
+  width: 120px;
+}
+
+.slide-menu-list button:hover {
+  background: beige;
+  border-radius: 3px;
+}
+
+
+.btn-wrap {display: flex;}  
+.icon-button {
+  width: 50px;
+  height: 50px;
+
+  text-align: center;
+  line-height: 3;
+}
+.icon-button:hover {
+  background-color: beige;
+}
+  
+
 .search-box{
     width: fit-content;
     height: fit-content;
@@ -52,8 +104,6 @@
     border-bottom:1px solid rgba(0,0,0,.5);
     transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
   }
-  
-  
   
 .head-line{
     margin-top: 1em;

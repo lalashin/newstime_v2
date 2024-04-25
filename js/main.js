@@ -1,8 +1,10 @@
-//const API_KEY = 'c42962f8d2ff47bfaa629c992b467868';
+const API_KEY = 'c42962f8d2ff47bfaa629c992b467868';
 let newsList = [];
-const menus = document.querySelectorAll(".menus button");
-menus.forEach(menu => menu.addEventListener("click",(event) =>getNewsCategory(event)));
-//console.log(menus)
+const menus = document.querySelectorAll("#menu-list button");
+menus.forEach((menu) =>
+  menu.addEventListener("click", (e) => getNewsCategory(e))
+);
+
 let searchInput = document.getElementById("search-input");
 let searchResult = document.getElementById("search-result")
 let newsBoard = document.getElementById("news-board");
@@ -16,6 +18,7 @@ const pageSize =10;
 const groupSize =5;
 
 let url = new URL(`https://lalatimes.netlify.app/top-headlines?country=kr&pageSize=${pageSize}`);
+
 
 const getNews = async () => {
     try{
@@ -68,6 +71,7 @@ const getNewsCategory = async (event)=>{
     console.log("category",category);
     url = new URL(`https://lalatimes.netlify.app/top-headlines?country=kr&pageSize=${pageSize}&category=${category}`);
     getNews();
+    closeMenu();
 };
 
 const getNewsByKeyword = async () => {
@@ -170,6 +174,14 @@ const moveToPage =(pageNum)=>{
     page = pageNum;
     getNews()
 }
+
+const openMenu = () => {
+    document.getElementById("slide-menu").style.width = "250px";
+  };
+  
+  const closeMenu = () => {
+    document.getElementById("slide-menu").style.width = "0";
+  };
 getLatesNews()
 
 //1. 버튼에 클릭이벤트
