@@ -1,0 +1,108 @@
+.search-box{
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+  }
+  .input-search{
+    height: 50px;
+    width: 50px;
+    border-style: none;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    outline: none;
+    border-radius: 25px;
+    transition: all .5s ease-in-out;
+    /* background-color: #000; */
+    padding-right: 40px;
+    color:#000;
+  }
+  .input-search::placeholder{
+    color:rgba(0,0,2055,.5);
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 100;
+  }
+  .btn-search{
+    width: 50px;
+    height: 50px;
+    border-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    right: 0px;
+    color:rgba(13, 110, 253, 1);
+    background-color:transparent;
+    pointer-events: painted;  
+  }
+  .btn-search:focus ~ .input-search{
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom:1px solid rgba(0,0,0,.5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  }
+  .input-search:focus{
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom:1px solid rgba(0,0,0,.5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  }
+  
+  
+  
+.head-line{
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+}
+.head-line svg {
+    width: 430px;
+}
+
+.menus {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 5px 0 4px;
+    border-top: 1px solid #ebebeb;
+    border-bottom: 4px double black;
+}
+.menus button {
+    border: none;
+    background: none;
+    margin: 5px 10px;
+}
+.menus button:hover{
+    background-color: beige;
+}
+.bt_line {
+    border-bottom: 2px solid #000;
+}
+.news { 
+  padding: 1em;
+}
+.news-img-size {
+    max-width: 100%;
+    max-height: 250px;
+}
+.title {
+    font-size: 20pt;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin-top: 2em;
+}
+
+.page-wrap {
+  padding: 20px 0;
+}
+
+.pagination li{
+    cursor: pointer;
+}
